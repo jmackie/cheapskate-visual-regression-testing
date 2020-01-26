@@ -1,0 +1,7 @@
+FROM buildkite/puppeteer:latest
+
+COPY screenshot.js screenshot.js
+
+WORKDIR /
+
+CMD wait-for-it.sh server:1234 -- node /screenshot.js

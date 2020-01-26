@@ -1,0 +1,15 @@
+version: '3'
+services:
+  screenshot:
+    build:
+      context: .
+      dockerfile: Dockerfile.screenshot
+    volumes:
+      - "./screenshots:/screenshots"
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: ..
+      dockerfile: ./test/Dockerfile.server
