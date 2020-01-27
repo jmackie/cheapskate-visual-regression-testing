@@ -1,3 +1,4 @@
+/* Add an outline to everything to make the visual diffs more meaningful */
 #root * {
   border: 1px solid red;
 }

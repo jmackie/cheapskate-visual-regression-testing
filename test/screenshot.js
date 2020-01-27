@@ -29,11 +29,11 @@ async function main() {
   await delay(1000); // load
 
   await page.setViewport(Object.assign(page.viewport(), { width: 1200 }));
-  await page.screenshot({ path: "./screenshots/Hello_1200.png" });
+  await page.screenshot({ path: "./.screenshots/Hello_1200.png" });
   await page.setViewport(Object.assign(page.viewport(), { width: 700 }));
-  await page.screenshot({ path: "./screenshots/Hello_700.png" });
+  await page.screenshot({ path: "./.screenshots/Hello_700.png" });
   await page.setViewport(Object.assign(page.viewport(), { width: 400 }));
-  await page.screenshot({ path: "./screenshots/Hello_400.png" });
+  await page.screenshot({ path: "./.screenshots/Hello_400.png" });
 
   await page.close();
   await browser.close();

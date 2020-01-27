@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile.screenshot
     volumes:
       - "./screenshot.js:/screenshot.js"
-      - "./screenshots:/screenshots"
+      - "./.screenshots:/.screenshots"
     depends_on:
       - server
 
@@ -16,7 +16,7 @@ services:
       dockerfile: ./test/Dockerfile.server
     volumes:
       - "./dist:/dist"
-    expose: 
+    expose:
       - 1234
 
     # For testing:
