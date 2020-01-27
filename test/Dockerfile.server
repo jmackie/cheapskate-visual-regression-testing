@@ -1,3 +1,5 @@
+# Tiny wrapper around a static file server
+
 FROM buildkite/puppeteer:latest
 
 WORKDIR /

@@ -1,3 +1,6 @@
+// Imports components to test and renders them according to the `component`
+// query param.
+
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 

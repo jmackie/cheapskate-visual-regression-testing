@@ -1,3 +1,5 @@
+// https://github.com/microsoft/TypeScript-React-Starter/blob/master/src/components/Hello.tsx
+
 import * as React from "react";
 import "./Hello.css";
 

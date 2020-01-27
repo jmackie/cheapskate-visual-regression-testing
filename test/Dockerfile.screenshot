@@ -1,8 +1,10 @@
+# Runs pupetteer to generate screenshots
+
 FROM buildkite/puppeteer:latest
 
 WORKDIR /
 
 # NOTE: mounted as a volume so we don't need to keep rebuilding the image
-#COPY screenshot.js screenshot.js  
+#COPY screenshot.js screenshot.js
 
 CMD wait-for-it.sh server:1234 --strict -- node /screenshot.js

@@ -1,4 +1,7 @@
 <!doctype html>
+
+<!-- parcel entrypoint -->
+
 <html>
 
 <head>
@@ -7,10 +10,18 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./index.css">
+  <style>
+
+  /* Add an outline to everything to make the visual diffs more meaningful */
+  #root * {
+    border: 1px solid red;
+  }
+
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root"><!-- components mounted here --></div>
   <script src="./index.tsx"></script>
 </body>
 

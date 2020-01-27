@@ -1,3 +1,6 @@
+// This script get's copied/mounted into the Dockerfile.screenshot container
+// and run when `http://server:1234` is ready.
+
 const puppeteer = require("puppeteer");
 
 function delay(time) {
