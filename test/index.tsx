@@ -3,23 +3,22 @@ import * as ReactDOM from "react-dom";
 
 import Hello from "../src/components/Hello";
 
-const renderHello = (elements: HTMLElement[]): void => {
-  elements.forEach(element => {
-    ReactDOM.render(<Hello name="Bozza" enthusiasmLevel={1} />, element);
-  });
+const renderHello = (element: HTMLElement): void => {
+  ReactDOM.render(<Hello name="Bozza" enthusiasmLevel={1} />, element);
 };
 
 const main = (): void => {
-  const elements = [
-    document.getElementById("desktop"),
-    document.getElementById("tablet"),
-    document.getElementById("mobile")
-  ];
-  switch (location.pathname) {
-    case "/Hello":
-      renderHello(elements);
+  const urlParams = new URLSearchParams(window.location.search);
+  const component = urlParams.get("component");
+  const rootElement = document.getElementById("root");
+
+  switch (component) {
+    case "Hello":
+      renderHello(rootElement);
+      break;
     default:
-      throw new Error("bad path");
+      throw new Error(`no such component: ${component}`);
+      break;
   }
 };
 

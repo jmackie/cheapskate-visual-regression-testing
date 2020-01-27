@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile.screenshot
     volumes:
+      - "./screenshot.js:/screenshot.js"
       - "./screenshots:/screenshots"
     depends_on:
       - server
@@ -13,3 +14,11 @@ services:
     build:
       context: ..
       dockerfile: ./test/Dockerfile.server
+    volumes:
+      - "./dist:/dist"
+    expose: 
+      - 1234
+
+    # For testing:
+    ports:
+      - "1234:1234"

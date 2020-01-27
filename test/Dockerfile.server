@@ -1,19 +1,11 @@
 FROM buildkite/puppeteer:latest
 
-COPY test test
-COPY src src
-
-RUN npm install \
-  @types/react \
-  @types/react-dom \
-  parcel-bundler \
-  react \
-  react-dom \
-  typescript
-
 WORKDIR /
 
-CMD /node_modules/.bin/parcel serve -p 1234 /test/index.html
+# NOTE: mounted as a volume so we don't need to keep rebuilding the image
+#COPY dist dist
+
+CMD cd dist && python3 -m http.server 1234
 
 HEALTHCHECK --interval=5s --timeout=10s --retries=10 \
   CMD curl -f http://localhost:1234

@@ -1,18 +1,3 @@
-body {
-  background-color: blue;
-}
-
-#desktop {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-#tablet {
-  width: 700px;
-  margin: 0 auto;
-}
-
-#mobile {
-  width: 400px;
-  margin: 0 auto;
+#root * {
+  border: 1px solid red;
 }

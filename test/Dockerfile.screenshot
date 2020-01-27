@@ -1,7 +1,8 @@
 FROM buildkite/puppeteer:latest
 
-COPY screenshot.js screenshot.js
-
 WORKDIR /
 
-CMD wait-for-it.sh server:1234 -- node /screenshot.js
+# NOTE: mounted as a volume so we don't need to keep rebuilding the image
+#COPY screenshot.js screenshot.js  
+
+CMD wait-for-it.sh server:1234 --strict -- node /screenshot.js
