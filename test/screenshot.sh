@@ -15,6 +15,6 @@ trap cleanup EXIT
 
 ../node_modules/.bin/parcel build --out-dir dist ./index.html
 
-mkdir -p .screenshots # otherwise docker creates it, which makes it hard to remove :/
+mkdir -p latest-screenshots # otherwise docker creates it, which makes it hard to remove :/
 
 docker-compose run --rm screenshot
