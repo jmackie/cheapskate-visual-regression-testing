@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile.screenshot
     volumes:
       - "./screenshot.js:/screenshot.js"
-      - "./.screenshots:/.screenshots"
+      - "./latest-screenshots:/latest-screenshots"
     depends_on:
       - server
 

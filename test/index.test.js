@@ -9,10 +9,10 @@ const { toMatchImageSnapshot } = require("jest-image-snapshot");
 expect.extend({ toMatchImageSnapshot });
 
 describe("visual-regression", () => {
-  const pendingScreenshots = path.resolve(__dirname, "./.screenshots");
-  fs.statSync(pendingScreenshots); // error if it doesn't exists
+  const latestScreenshots = path.resolve(__dirname, "./latest-screenshots");
+  fs.statSync(latestScreenshots); // error if it doesn't exist
 
-  klawSync(pendingScreenshots, { nodir: true }).forEach(file => {
+  klawSync(latestScreenshots, { nodir: true }).forEach(file => {
     if (!file.path.endsWith("png")) {
       return;
     }
