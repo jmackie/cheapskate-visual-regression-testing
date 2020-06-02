@@ -24,8 +24,8 @@ async function main() {
   const page = await browser.newPage();
 
   page.on("pageerror", err => {
-    console.log(err);
-    process.exit(2);
+    console.log("caught page error:", err);
+    process.exit(1);
   });
 
   await page.goto("http://server:1234/?component=Hello");

@@ -17,4 +17,5 @@ trap cleanup EXIT
 
 mkdir -p latest-screenshots # otherwise docker creates it, which makes it hard to remove :/
 
+docker-compose build
 docker-compose run --rm screenshot

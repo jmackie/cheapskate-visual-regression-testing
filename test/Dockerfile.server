@@ -1,6 +1,6 @@
 # Tiny wrapper around a static file server
 
-FROM buildkite/puppeteer:latest
+FROM python:3-alpine
 
 WORKDIR /
 
